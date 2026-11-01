@@ -41,3 +41,35 @@ Averaging (FedAvg) and distributes the global model.
 ## Project Status
 
 Initial development and environment setup.
+
+
+@'
+
+## Development Progress
+
+### Day 1 - Project Setup and Data Preprocessing
+
+Completed:
+- Initialized GitHub repository and project structure.
+- Downloaded UCI Student Performance dataset.
+- Explored 395 student records.
+- Analyzed 33 original dataset columns.
+- Created binary Pass/Fail target using G3 >= 10.
+- Split dataset into 80% training and 20% testing.
+- Applied One-Hot Encoding to categorical features.
+- Applied StandardScaler to numerical features.
+- Prepared 58 numerical input features.
+- Verified dataset contains no missing values.
+
+Dataset Summary:
+- Total records: 395
+- Training records: 316
+- Testing records: 79
+- Processed features: 58
+- Passing students: 265
+- Failing students: 130
+
+Next:
+- Simulate three educational clients.
+- Implement IID and non-IID data partitioning.
+'@ | Add-Content README.md
