@@ -1,0 +1,4 @@
+Model,Accuracy,Precision,Recall,F1 Score
+Centralized,0.8608,0.92,0.8679,0.8932
+IID FedAvg,0.8228,0.898,0.8302,0.8627
+Non-IID FedAvg,0.8734,0.9388,0.8679,0.902
