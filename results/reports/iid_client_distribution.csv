@@ -1,0 +1,4 @@
+Client,Distribution,Pass,Fail,Total,Pass_Percentage,Fail_Percentage
+Client 1,IID,71,35,106,66.98,33.02
+Client 2,IID,67,38,105,63.81,36.19
+Client 3,IID,74,31,105,70.48,29.52
