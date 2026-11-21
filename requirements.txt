@@ -22,3 +22,6 @@ ipykernel
 
 # Testing
 pytest>=8.0
+
+# Markdown tables for metrics_table.md
+tabulate
