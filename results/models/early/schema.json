@@ -1,0 +1,335 @@
+{
+  "variant": "early",
+  "description": "Early prediction without G1, G2",
+  "target": "pass = (G3 >= 10)",
+  "input_columns": [
+    "school",
+    "sex",
+    "age",
+    "address",
+    "famsize",
+    "Pstatus",
+    "Medu",
+    "Fedu",
+    "Mjob",
+    "Fjob",
+    "reason",
+    "guardian",
+    "traveltime",
+    "studytime",
+    "failures",
+    "schoolsup",
+    "famsup",
+    "paid",
+    "activities",
+    "nursery",
+    "higher",
+    "internet",
+    "romantic",
+    "famrel",
+    "freetime",
+    "goout",
+    "Dalc",
+    "Walc",
+    "health",
+    "absences"
+  ],
+  "n_input_columns": 30,
+  "n_features_after_encoding": 56,
+  "feature_names": [
+    "school_GP",
+    "school_MS",
+    "sex_F",
+    "sex_M",
+    "address_R",
+    "address_U",
+    "famsize_GT3",
+    "famsize_LE3",
+    "Pstatus_A",
+    "Pstatus_T",
+    "Mjob_at_home",
+    "Mjob_health",
+    "Mjob_other",
+    "Mjob_services",
+    "Mjob_teacher",
+    "Fjob_at_home",
+    "Fjob_health",
+    "Fjob_other",
+    "Fjob_services",
+    "Fjob_teacher",
+    "reason_course",
+    "reason_home",
+    "reason_other",
+    "reason_reputation",
+    "guardian_father",
+    "guardian_mother",
+    "guardian_other",
+    "schoolsup_no",
+    "schoolsup_yes",
+    "famsup_no",
+    "famsup_yes",
+    "paid_no",
+    "paid_yes",
+    "activities_no",
+    "activities_yes",
+    "nursery_no",
+    "nursery_yes",
+    "higher_no",
+    "higher_yes",
+    "internet_no",
+    "internet_yes",
+    "romantic_no",
+    "romantic_yes",
+    "age",
+    "Medu",
+    "Fedu",
+    "traveltime",
+    "studytime",
+    "failures",
+    "famrel",
+    "freetime",
+    "goout",
+    "Dalc",
+    "Walc",
+    "health",
+    "absences"
+  ],
+  "fields": {
+    "school": {
+      "description": "Student's school (GP = Gabriel Pereira, MS = Mousinho da Silveira)",
+      "type": "categorical",
+      "options": [
+        "GP",
+        "MS"
+      ]
+    },
+    "sex": {
+      "description": "Student's sex (F / M)",
+      "type": "categorical",
+      "options": [
+        "F",
+        "M"
+      ]
+    },
+    "age": {
+      "description": "Age in years (15-22)",
+      "type": "numeric",
+      "min": 15,
+      "max": 22,
+      "default": 17
+    },
+    "address": {
+      "description": "Home address type (U = urban, R = rural)",
+      "type": "categorical",
+      "options": [
+        "R",
+        "U"
+      ]
+    },
+    "famsize": {
+      "description": "Family size (LE3 = 3 or fewer, GT3 = more than 3)",
+      "type": "categorical",
+      "options": [
+        "GT3",
+        "LE3"
+      ]
+    },
+    "Pstatus": {
+      "description": "Parents' cohabitation status (T = together, A = apart)",
+      "type": "categorical",
+      "options": [
+        "A",
+        "T"
+      ]
+    },
+    "Medu": {
+      "description": "Mother's education (0 none ... 4 higher education)",
+      "type": "numeric",
+      "min": 0,
+      "max": 4,
+      "default": 3
+    },
+    "Fedu": {
+      "description": "Father's education (0 none ... 4 higher education)",
+      "type": "numeric",
+      "min": 0,
+      "max": 4,
+      "default": 2
+    },
+    "Mjob": {
+      "description": "Mother's job (teacher, health, services, at_home, other)",
+      "type": "categorical",
+      "options": [
+        "at_home",
+        "health",
+        "other",
+        "services",
+        "teacher"
+      ]
+    },
+    "Fjob": {
+      "description": "Father's job (teacher, health, services, at_home, other)",
+      "type": "categorical",
+      "options": [
+        "at_home",
+        "health",
+        "other",
+        "services",
+        "teacher"
+      ]
+    },
+    "reason": {
+      "description": "Reason for choosing the school (home, reputation, course, other)",
+      "type": "categorical",
+      "options": [
+        "course",
+        "home",
+        "other",
+        "reputation"
+      ]
+    },
+    "guardian": {
+      "description": "Student's guardian (mother, father, other)",
+      "type": "categorical",
+      "options": [
+        "father",
+        "mother",
+        "other"
+      ]
+    },
+    "traveltime": {
+      "description": "Home-to-school travel time (1 = <15 min ... 4 = >1 hour)",
+      "type": "numeric",
+      "min": 1,
+      "max": 4,
+      "default": 1
+    },
+    "studytime": {
+      "description": "Weekly study time (1 = <2 h ... 4 = >10 h)",
+      "type": "numeric",
+      "min": 1,
+      "max": 4,
+      "default": 2
+    },
+    "failures": {
+      "description": "Number of past class failures (0-3, 3 means 3 or more)",
+      "type": "numeric",
+      "min": 0,
+      "max": 3,
+      "default": 0
+    },
+    "schoolsup": {
+      "description": "Extra educational support from school (yes / no)",
+      "type": "categorical",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    "famsup": {
+      "description": "Family educational support (yes / no)",
+      "type": "categorical",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    "paid": {
+      "description": "Extra paid classes in the subject (yes / no)",
+      "type": "categorical",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    "activities": {
+      "description": "Extra-curricular activities (yes / no)",
+      "type": "categorical",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    "nursery": {
+      "description": "Attended nursery school (yes / no)",
+      "type": "categorical",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    "higher": {
+      "description": "Wants to take higher education (yes / no)",
+      "type": "categorical",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    "internet": {
+      "description": "Internet access at home (yes / no)",
+      "type": "categorical",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    "romantic": {
+      "description": "In a romantic relationship (yes / no)",
+      "type": "categorical",
+      "options": [
+        "no",
+        "yes"
+      ]
+    },
+    "famrel": {
+      "description": "Quality of family relationships (1 very bad ... 5 excellent)",
+      "type": "numeric",
+      "min": 1,
+      "max": 5,
+      "default": 4
+    },
+    "freetime": {
+      "description": "Free time after school (1 very low ... 5 very high)",
+      "type": "numeric",
+      "min": 1,
+      "max": 5,
+      "default": 3
+    },
+    "goout": {
+      "description": "Going out with friends (1 very low ... 5 very high)",
+      "type": "numeric",
+      "min": 1,
+      "max": 5,
+      "default": 3
+    },
+    "Dalc": {
+      "description": "Workday alcohol consumption (1 very low ... 5 very high)",
+      "type": "numeric",
+      "min": 1,
+      "max": 5,
+      "default": 1
+    },
+    "Walc": {
+      "description": "Weekend alcohol consumption (1 very low ... 5 very high)",
+      "type": "numeric",
+      "min": 1,
+      "max": 5,
+      "default": 2
+    },
+    "health": {
+      "description": "Current health status (1 very bad ... 5 very good)",
+      "type": "numeric",
+      "min": 1,
+      "max": 5,
+      "default": 4
+    },
+    "absences": {
+      "description": "Number of school absences (0-93)",
+      "type": "numeric",
+      "min": 0,
+      "max": 75,
+      "default": 3
+    }
+  }
+}

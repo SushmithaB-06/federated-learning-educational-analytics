@@ -1,0 +1,39 @@
+{
+  "dataset": "UCI Student Performance (Mathematics)",
+  "source": "https://archive.ics.uci.edu/dataset/320/student+performance",
+  "rows": 395,
+  "columns": 33,
+  "missing_values": 0,
+  "target": "pass = (G3 >= 10)",
+  "pass_count": 265,
+  "fail_count": 130,
+  "pass_rate": 0.6709,
+  "test_size": 0.2,
+  "split_seed": 42,
+  "variants": {
+    "full": {
+      "description": "Uses first- and second-period grades G1, G2",
+      "input_columns": 32,
+      "features_after_encoding": 58,
+      "train_rows": 316,
+      "test_rows": 79,
+      "train_pass": 212,
+      "train_fail": 104,
+      "test_pass": 53,
+      "test_fail": 26,
+      "always_pass_baseline_accuracy": 0.6709
+    },
+    "early": {
+      "description": "Early prediction without G1, G2",
+      "input_columns": 30,
+      "features_after_encoding": 56,
+      "train_rows": 316,
+      "test_rows": 79,
+      "train_pass": 212,
+      "train_fail": 104,
+      "test_pass": 53,
+      "test_fail": 26,
+      "always_pass_baseline_accuracy": 0.6709
+    }
+  }
+}
