@@ -46,13 +46,13 @@ def architecture_svg(compact: bool = False) -> str:
       <text x="24" y="{h - 141}" font-size="10" fill="{palette.INK_SECONDARY}">only model weights + sample counts cross this line  ↑   (solid = client → server, dashed = global model → clients)</text>
       {''.join(boxes)}
     </svg>"""
-    # Strip indentation so Markdown renderers never mistake the markup for a code block.
-    return "\n".join(line.strip() for line in svg.splitlines() if line.strip())
+    # One compact string starting with "<svg": st.image renders an SVG string as an image.
+    return "".join(line.strip() for line in svg.splitlines() if line.strip())
 
 
 def render() -> None:
     common.page_header("Federated Architecture", "Who holds what, and what travels over the network")
-    st.html(architecture_svg())
+    st.image(architecture_svg(), use_container_width=True)
 
     st.subheader("One communication round, step by step")
     steps = [
