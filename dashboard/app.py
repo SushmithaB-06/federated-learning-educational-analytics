@@ -24,15 +24,17 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# Every view exposes a function called ``render``; Streamlit would infer the same URL for all of them,
+# so each page gets an explicit, unique url_path.
 PAGES = [
-    st.Page(home.render, title="Overview", icon="🏠", default=True),
-    st.Page(dataset.render, title="Dataset Analytics", icon="📊"),
-    st.Page(architecture.render, title="Federated Architecture", icon="🏛️"),
-    st.Page(clients.render, title="Client Data Distribution", icon="🏫"),
-    st.Page(training.render, title="Training & Convergence", icon="📈"),
-    st.Page(evaluation.render, title="Model Evaluation", icon="🎯"),
-    st.Page(prediction.render, title="Student Prediction", icon="🔮"),
-    st.Page(privacy.render, title="Privacy & Limitations", icon="🔒"),
+    st.Page(home.render, title="Overview", icon="🏠", url_path="overview", default=True),
+    st.Page(dataset.render, title="Dataset Analytics", icon="📊", url_path="dataset"),
+    st.Page(architecture.render, title="Federated Architecture", icon="🏛️", url_path="architecture"),
+    st.Page(clients.render, title="Client Data Distribution", icon="🏫", url_path="clients"),
+    st.Page(training.render, title="Training & Convergence", icon="📈", url_path="training"),
+    st.Page(evaluation.render, title="Model Evaluation", icon="🎯", url_path="evaluation"),
+    st.Page(prediction.render, title="Student Prediction", icon="🔮", url_path="prediction"),
+    st.Page(privacy.render, title="Privacy & Limitations", icon="🔒", url_path="privacy"),
 ]
 
 with st.sidebar:

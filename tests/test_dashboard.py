@@ -22,6 +22,13 @@ def page(name: str) -> AppTest:
     return AppTest.from_string(script, default_timeout=180)
 
 
+def test_full_app_entry_point_builds_navigation():
+    """Run the real app.py so navigation/page-registration errors are caught."""
+    at = AppTest.from_file(str(config.PROJECT_ROOT / "dashboard" / "app.py"), default_timeout=180).run()
+    assert not at.exception, [e.message for e in at.exception]
+    assert not at.error, [e.value for e in at.error]
+
+
 @pytest.mark.parametrize("name", PAGES)
 def test_page_renders_without_exception(name):
     at = page(name).run()
