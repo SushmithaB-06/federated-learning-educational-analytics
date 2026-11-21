@@ -18,14 +18,15 @@ import numpy as np
 from src import config
 from src.clients.partition import describe_partitions, make_partitions
 from src.data.preprocess import load_processed
+from src.evaluation.palette import FAIL_COLOR, PASS_COLOR
 
 
 def plot_distributions(tables: dict[str, "pd.DataFrame"], path) -> None:
     fig, axes = plt.subplots(1, 2, figsize=(11, 4), sharey=True)
     for ax, (scheme, tbl) in zip(axes, tables.items()):
         x = np.arange(len(tbl))
-        ax.bar(x, tbl["pass"], color="#2a9d8f", label="Pass")
-        ax.bar(x, tbl["fail"], bottom=tbl["pass"], color="#e76f51", label="Fail")
+        ax.bar(x, tbl["pass"], color=PASS_COLOR, label="Pass", edgecolor="white", linewidth=2)
+        ax.bar(x, tbl["fail"], bottom=tbl["pass"], color=FAIL_COLOR, label="Fail", edgecolor="white", linewidth=2)
         for i, r in tbl.iterrows():
             ax.text(i, r["students"] + 2, f"{r['pass_rate']:.0%} pass", ha="center", fontsize=9)
         ax.set_xticks(x)

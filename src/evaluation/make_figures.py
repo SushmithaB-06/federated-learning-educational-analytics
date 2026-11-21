@@ -25,10 +25,11 @@ import numpy as np
 import pandas as pd
 
 from src import config
+from src.evaluation.palette import CLIENT_COLORS, METHOD_COLORS as COLORS, NEUTRAL, SEQUENTIAL
 from src.experiments.run_experiments import METHOD_LABELS, METHODS, RUNS_DIR
+from matplotlib.colors import LinearSegmentedColormap
 
-COLORS = {"centralized": "#6c757d", "fedavg_iid": "#2a9d8f", "fedavg_non_iid": "#e76f51"}
-CLIENT_COLORS = ["#264653", "#2a9d8f", "#e9c46a"]
+BLUES = LinearSegmentedColormap.from_list("seq", SEQUENTIAL)
 plt.rcParams.update({"figure.dpi": 130, "axes.spines.top": False, "axes.spines.right": False, "font.size": 10})
 
 
@@ -73,7 +74,7 @@ def plot_metrics(summary: dict, variant: str) -> None:
         bars = ax.bar(x + (i - 1) * width, means, width, yerr=stds, capsize=3, color=COLORS[method], label=agg["label"])
         for b, m in zip(bars, means):
             ax.text(b.get_x() + b.get_width() / 2, m + 0.03, f"{m:.2f}", ha="center", fontsize=7.5)
-    ax.axhline(v["always_pass_baseline"]["accuracy"], color="black", ls=":", lw=1,
+    ax.axhline(v["always_pass_baseline"]["accuracy"], color=NEUTRAL, ls=":", lw=1.2,
                label=f"Always-Pass accuracy ({v['always_pass_baseline']['accuracy']:.3f})")
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
@@ -129,7 +130,7 @@ def plot_confusions(runs: dict, variant: str) -> None:
     for ax, method in zip(axes, METHODS):
         run = next(r for r in runs[variant][method] if r["seed"] == config.RANDOM_SEED)
         cm = np.array(run["test_metrics"]["confusion_matrix"])
-        ax.imshow(cm, cmap="Blues", vmin=0, vmax=cm.max())
+        ax.imshow(cm, cmap=BLUES, vmin=0, vmax=cm.max())
         for i in range(2):
             for j in range(2):
                 ax.text(j, i, str(cm[i, j]), ha="center", va="center",
@@ -168,8 +169,9 @@ def plot_communication(runs: dict) -> None:
     run = runs["full"]["fedavg_iid"][0]
     per_round = np.array([h["bytes_uplink"] + h["bytes_downlink"] for h in run["history"]]) / 1e6
     fig, ax = plt.subplots(figsize=(6.5, 3.8))
-    ax.bar(range(1, len(per_round) + 1), per_round, color="#457b9d", label="per round")
-    ax.plot(range(1, len(per_round) + 1), per_round.cumsum(), color="#e76f51", marker="o", ms=3, label="cumulative")
+    ax.bar(range(1, len(per_round) + 1), per_round, color=COLORS["fedavg_iid"], label="per round")
+    ax.plot(range(1, len(per_round) + 1), per_round.cumsum(), color=COLORS["fedavg_non_iid"], marker="o", ms=3,
+            label="cumulative")
     ax.set_xlabel("communication round")
     ax.set_ylabel("MB exchanged (3 clients, float32 weights)")
     ax.set_title(f"Communication cost: {run['bytes_per_model_message'] / 1e3:.1f} KB per model message, "
