@@ -1,0 +1,51 @@
+{
+  "input_dim": 58,
+  "hidden": [
+    32,
+    16
+  ],
+  "output_dim": 1,
+  "metadata": {
+    "variant": "full",
+    "method": "fedavg_non_iid",
+    "label": "FedAvg (Non-IID)",
+    "seed": 42,
+    "n_features": 58,
+    "test_metrics": {
+      "accuracy": 0.8734177215189873,
+      "precision": 0.9215686274509803,
+      "recall": 0.8867924528301887,
+      "f1": 0.9038461538461539,
+      "fail_recall": 0.8461538461538461,
+      "fail_precision": 0.7857142857142857,
+      "balanced_accuracy": 0.8664731494920175,
+      "confusion_matrix": [
+        [
+          22,
+          4
+        ],
+        [
+          6,
+          47
+        ]
+      ],
+      "per_class": {
+        "Fail": {
+          "precision": 0.7857142857142857,
+          "recall": 0.8461538461538461,
+          "f1-score": 0.8148148148148148,
+          "support": 26.0
+        },
+        "Pass": {
+          "precision": 0.9215686274509803,
+          "recall": 0.8867924528301887,
+          "f1-score": 0.9038461538461539,
+          "support": 53.0
+        }
+      },
+      "n_test": 79,
+      "roc_auc": 0.9455732946298985
+    },
+    "trained_on": "results of python -m src.experiments.run_experiments"
+  }
+}

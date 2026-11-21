@@ -1,0 +1,450 @@
+{
+ "variant": "early",
+ "method": "fedavg_iid",
+ "label": "FedAvg (IID)",
+ "seed": 44,
+ "test_metrics": {
+  "accuracy": 0.6835443037974683,
+  "precision": 0.75,
+  "recall": 0.7924528301886793,
+  "f1": 0.7706422018348624,
+  "fail_recall": 0.46153846153846156,
+  "fail_precision": 0.5217391304347826,
+  "balanced_accuracy": 0.6269956458635704,
+  "confusion_matrix": [
+   [
+    12,
+    14
+   ],
+   [
+    11,
+    42
+   ]
+  ],
+  "per_class": {
+   "Fail": {
+    "precision": 0.5217391304347826,
+    "recall": 0.46153846153846156,
+    "f1-score": 0.4897959183673469,
+    "support": 26.0
+   },
+   "Pass": {
+    "precision": 0.75,
+    "recall": 0.7924528301886793,
+    "f1-score": 0.7706422018348624,
+    "support": 53.0
+   }
+  },
+  "n_test": 79,
+  "roc_auc": 0.6211901306240929
+ },
+ "seconds": 2.3,
+ "history": [
+  {
+   "round": 1,
+   "train_loss": 0.6564191337600648,
+   "val_loss": 0.6548410287270179,
+   "test_loss": 0.6617311835289001,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.6584718624750773,
+    "Institution B": 0.6610866274152484,
+    "Institution C": 0.6496179448552879
+   },
+   "client_val_loss": {
+    "Institution A": 0.6597877740859985,
+    "Institution B": 0.6507631540298462,
+    "Institution C": 0.6539307832717896
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 2,
+   "train_loss": 0.6060707571497002,
+   "val_loss": 0.6082549883769108,
+   "test_loss": 0.6280547380447388,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.6099733738672166,
+    "Institution B": 0.6144265958241054,
+    "Institution C": 0.5936646095241409
+   },
+   "client_val_loss": {
+    "Institution A": 0.6111077666282654,
+    "Institution B": 0.6032329797744751,
+    "Institution C": 0.610527515411377
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 3,
+   "train_loss": 0.5799538906351979,
+   "val_loss": 0.585328067266024,
+   "test_loss": 0.6175010204315186,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.5809779507773263,
+    "Institution B": 0.593338341940017,
+    "Institution C": 0.565371782664793
+   },
+   "client_val_loss": {
+    "Institution A": 0.5802921652793884,
+    "Institution B": 0.5832984447479248,
+    "Institution C": 0.5927300453186035
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 4,
+   "train_loss": 0.5527055093729164,
+   "val_loss": 0.5654584939663226,
+   "test_loss": 0.608102560043335,
+   "test_accuracy": 0.6455696202531646,
+   "client_train_loss": {
+    "Institution A": 0.5548570127714247,
+    "Institution B": 0.572032147929782,
+    "Institution C": 0.5309685946228992
+   },
+   "client_val_loss": {
+    "Institution A": 0.5512058734893799,
+    "Institution B": 0.5674806237220764,
+    "Institution C": 0.5782713890075684
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 5,
+   "train_loss": 0.5263651740028563,
+   "val_loss": 0.5490136981010437,
+   "test_loss": 0.602600634098053,
+   "test_accuracy": 0.6582278481012658,
+   "client_train_loss": {
+    "Institution A": 0.5296104294913155,
+    "Institution B": 0.5468102040744963,
+    "Institution C": 0.5023894633155271
+   },
+   "client_val_loss": {
+    "Institution A": 0.5255423188209534,
+    "Institution B": 0.5536097288131714,
+    "Institution C": 0.5687878727912903
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 6,
+   "train_loss": 0.49330470381504987,
+   "val_loss": 0.5419142062847431,
+   "test_loss": 0.602277934551239,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.49775410833812894,
+    "Institution B": 0.5232707403955006,
+    "Institution C": 0.45847461884280283
+   },
+   "client_val_loss": {
+    "Institution A": 0.508036196231842,
+    "Institution B": 0.5504191517829895,
+    "Institution C": 0.568495512008667
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 7,
+   "train_loss": 0.4668153044712021,
+   "val_loss": 0.5370702349222624,
+   "test_loss": 0.610640823841095,
+   "test_accuracy": 0.6962025316455697,
+   "client_train_loss": {
+    "Institution A": 0.47411494737579707,
+    "Institution B": 0.5009743173917135,
+    "Institution C": 0.42485714676868486
+   },
+   "client_val_loss": {
+    "Institution A": 0.49641895294189453,
+    "Institution B": 0.5468384027481079,
+    "Institution C": 0.5694239735603333
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 8,
+   "train_loss": 0.4392279952289574,
+   "val_loss": 0.5452050429124099,
+   "test_loss": 0.6269534826278687,
+   "test_accuracy": 0.6835443037974683,
+   "client_train_loss": {
+    "Institution A": 0.44406010849135263,
+    "Institution B": 0.4759793778260549,
+    "Institution C": 0.39714349339525384
+   },
+   "client_val_loss": {
+    "Institution A": 0.4909293055534363,
+    "Institution B": 0.5560610294342041,
+    "Institution C": 0.590692400932312
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 9,
+   "train_loss": 0.4224086958336165,
+   "val_loss": 0.5564321517944336,
+   "test_loss": 0.6424911022186279,
+   "test_accuracy": 0.6962025316455697,
+   "client_train_loss": {
+    "Institution A": 0.42640237297330585,
+    "Institution B": 0.45964954438663663,
+    "Institution C": 0.3806773686265371
+   },
+   "client_val_loss": {
+    "Institution A": 0.48902761936187744,
+    "Institution B": 0.5725749135017395,
+    "Institution C": 0.6101349592208862
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 10,
+   "train_loss": 0.40231629885525344,
+   "val_loss": 0.5693838578004103,
+   "test_loss": 0.6631063222885132,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.40935698506377993,
+    "Institution B": 0.43494419540677753,
+    "Institution C": 0.36216978136315403
+   },
+   "client_val_loss": {
+    "Institution A": 0.48909899592399597,
+    "Institution B": 0.5897554755210876,
+    "Institution C": 0.6321501135826111
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 11,
+   "train_loss": 0.3905296533171874,
+   "val_loss": 0.5828574198942919,
+   "test_loss": 0.6741382479667664,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.4032628209817977,
+    "Institution B": 0.4265802303949992,
+    "Institution C": 0.3411581526140133
+   },
+   "client_val_loss": {
+    "Institution A": 0.4912806451320648,
+    "Institution B": 0.6027044057846069,
+    "Institution C": 0.6580029129981995
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 12,
+   "train_loss": 0.36818159671418693,
+   "val_loss": 0.5948280472021836,
+   "test_loss": 0.697187066078186,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.38315874338150024,
+    "Institution B": 0.40003736813863117,
+    "Institution C": 0.32078442659722756
+   },
+   "client_val_loss": {
+    "Institution A": 0.4971347153186798,
+    "Institution B": 0.6086093187332153,
+    "Institution C": 0.6827359199523926
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 13,
+   "train_loss": 0.35709449625110246,
+   "val_loss": 0.6082527188154367,
+   "test_loss": 0.7114284634590149,
+   "test_accuracy": 0.6835443037974683,
+   "client_train_loss": {
+    "Institution A": 0.3703595797220866,
+    "Institution B": 0.3807358117330642,
+    "Institution C": 0.319743441889085
+   },
+   "client_val_loss": {
+    "Institution A": 0.5021012425422668,
+    "Institution B": 0.615349531173706,
+    "Institution C": 0.7120242714881897
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 14,
+   "train_loss": 0.3404720888669747,
+   "val_loss": 0.6255793479772714,
+   "test_loss": 0.726258397102356,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.3554790388970148,
+    "Institution B": 0.36304750187056406,
+    "Institution C": 0.3024369262787233
+   },
+   "client_val_loss": {
+    "Institution A": 0.5127809047698975,
+    "Institution B": 0.6289275288581848,
+    "Institution C": 0.740241527557373
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 15,
+   "train_loss": 0.3285439396462592,
+   "val_loss": 0.6418690177110525,
+   "test_loss": 0.7480932474136353,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.3529417032287234,
+    "Institution B": 0.34946114960170926,
+    "Institution C": 0.28268300257174367
+   },
+   "client_val_loss": {
+    "Institution A": 0.5233433842658997,
+    "Institution B": 0.6358087658882141,
+    "Institution C": 0.7723875641822815
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 16,
+   "train_loss": 0.31246834423437536,
+   "val_loss": 0.6544356135221628,
+   "test_loss": 0.7702816724777222,
+   "test_accuracy": 0.6835443037974683,
+   "client_train_loss": {
+    "Institution A": 0.33616628036612556,
+    "Institution B": 0.32759349261011395,
+    "Institution C": 0.27317751172077226
+   },
+   "client_val_loss": {
+    "Institution A": 0.5368114113807678,
+    "Institution B": 0.6407053470611572,
+    "Institution C": 0.7920450568199158
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 17,
+   "train_loss": 0.2986355292132176,
+   "val_loss": 0.6660057902336121,
+   "test_loss": 0.7880042791366577,
+   "test_accuracy": 0.6835443037974683,
+   "client_train_loss": {
+    "Institution A": 0.3219478399980636,
+    "Institution B": 0.31049288170678274,
+    "Institution C": 0.26304213505193413
+   },
+   "client_val_loss": {
+    "Institution A": 0.5393435955047607,
+    "Institution B": 0.6416744589805603,
+    "Institution C": 0.8241894841194153
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 18,
+   "train_loss": 0.28936166924784384,
+   "val_loss": 0.6874411619626559,
+   "test_loss": 0.8091971278190613,
+   "test_accuracy": 0.6708860759493671,
+   "client_train_loss": {
+    "Institution A": 0.3100130224511737,
+    "Institution B": 0.2973376739592779,
+    "Institution C": 0.260389403406396
+   },
+   "client_val_loss": {
+    "Institution A": 0.556261420249939,
+    "Institution B": 0.6547844409942627,
+    "Institution C": 0.8590793609619141
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 19,
+   "train_loss": 0.27015908213844336,
+   "val_loss": 0.7056978152348445,
+   "test_loss": 0.8339331746101379,
+   "test_accuracy": 0.6582278481012658,
+   "client_train_loss": {
+    "Institution A": 0.30026608847436453,
+    "Institution B": 0.2756748894850413,
+    "Institution C": 0.2341070779296289
+   },
+   "client_val_loss": {
+    "Institution A": 0.5719683766365051,
+    "Institution B": 0.6627001166343689,
+    "Institution C": 0.8908405303955078
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  },
+  {
+   "round": 20,
+   "train_loss": 0.2582723484096299,
+   "val_loss": 0.7081790199646583,
+   "test_loss": 0.8449207544326782,
+   "test_accuracy": 0.6835443037974683,
+   "client_train_loss": {
+    "Institution A": 0.2831307990210397,
+    "Institution B": 0.26304361082258676,
+    "Institution C": 0.22828565089099379
+   },
+   "client_val_loss": {
+    "Institution A": 0.5691165924072266,
+    "Institution B": 0.6474819779396057,
+    "Institution C": 0.9174508452415466
+   },
+   "bytes_uplink": 28428,
+   "bytes_downlink": 28428
+  }
+ ],
+ "train_samples": 251,
+ "clients": [
+  {
+   "name": "Institution A",
+   "train_samples": 84,
+   "val_samples": 22,
+   "pass": 56,
+   "fail": 28
+  },
+  {
+   "name": "Institution B",
+   "train_samples": 84,
+   "val_samples": 22,
+   "pass": 56,
+   "fail": 28
+  },
+  {
+   "name": "Institution C",
+   "train_samples": 83,
+   "val_samples": 21,
+   "pass": 56,
+   "fail": 27
+  }
+ ],
+ "communication_bytes": 1137120,
+ "bytes_per_model_message": 9476
+}
