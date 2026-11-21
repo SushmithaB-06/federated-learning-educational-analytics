@@ -39,7 +39,7 @@ PAGES = [
 
 with st.sidebar:
     st.markdown("### 🎓 FL for Educational Analytics")
-    st.caption("Final-year B.Tech project · simulated federated learning on the UCI Student Performance dataset")
+    st.caption("Simulated federated learning on the UCI Student Performance dataset")
 
 nav = st.navigation(PAGES)
 

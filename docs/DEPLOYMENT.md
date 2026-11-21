@@ -27,20 +27,20 @@ What the app needs at runtime:
 | `results/models/{full,early}/*` | yes | preprocessor, schema, seed-42 models (tiny) |
 | `results/reports/*` incl. `runs/` | yes | all metrics and histories |
 | `results/figures/*` | yes | only used by the README |
-| `data/raw/student-mat.csv` | **no** | the Dataset Analytics page reads it. Either (a) commit it if the UCI licence on the dataset page permits redistribution, or (b) add a download step. See below. |
+| `data/raw/student-mat.csv` | yes | CC BY 4.0 (checked on the UCI page, Nov 2026); attribution is in the README. The Dataset Analytics page reads it. |
 | `data/processed/*` | no | not needed by the dashboard |
 
 Steps:
 
-1. Push `main` to GitHub.
-2. Decide how the raw CSV reaches the app (option a or b above). For option (a) remove `data/raw/*` from
-   `.gitignore`, commit the file, and cite the licence in the README.
-3. Go to <https://share.streamlit.io>, sign in with GitHub, "New app", choose the repo, branch `main`,
-   main file `dashboard/app.py`.
-4. Advanced settings → Python version 3.11. Leave secrets empty (the app has none).
-5. Deploy. First build takes several minutes because of PyTorch. If it fails on memory, pin a CPU-only torch build in
-   `requirements.txt`, e.g. add a line `--extra-index-url https://download.pytorch.org/whl/cpu` above `torch`.
-6. Open the URL, click through all eight pages, and only then write the URL into the README.
+1. Push `main` to GitHub (repository must be public for friends to open the app without a Streamlit login).
+2. Go to <https://share.streamlit.io>, sign in with the **SushmithaB-06** GitHub account, "Create app" → "Deploy a
+   public app from GitHub".
+3. Repository `SushmithaB-06/federated-learning-educational-analytics`, branch `main`, main file path
+   `dashboard/app.py`. Choose an app URL (e.g. `fl-educational-analytics`).
+4. Advanced settings → Python 3.11 (3.12 also works). Leave secrets empty (the app has none).
+5. Deploy. The first build takes several minutes; `requirements.txt` already points at CPU-only PyTorch wheels so
+   the install stays small.
+6. Open the URL, click through all eight pages, press Predict, and only then write the URL into the README.
 
 Limitations of the free tier: 1 GB RAM, app sleeps after inactivity, cold start of 30-60 s, no GPU (not needed).
 

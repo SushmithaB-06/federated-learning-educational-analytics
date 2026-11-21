@@ -79,12 +79,11 @@ def render() -> None:
     a, b = st.columns([1, 1.4])
     with a:
         color = palette.PASS_COLOR if result.label == "Pass" else palette.FAIL_COLOR
-        st.markdown(
+        st.html(
             f"<div style='padding:18px 22px;border-radius:12px;border:2px solid {color};'>"
             f"<div style='font-size:13px;color:{palette.INK_SECONDARY}'>Predicted outcome</div>"
             f"<div style='font-size:42px;font-weight:700;color:{color}'>{result.label}</div>"
-            f"<div style='font-size:13px;color:{palette.INK_SECONDARY}'>{result.confidence_note}</div></div>",
-            unsafe_allow_html=True)
+            f"<div style='font-size:13px;color:{palette.INK_SECONDARY}'>{result.confidence_note}</div></div>")
         st.metric("Probability of Pass", common.pct(result.probability_pass))
         st.metric("Probability of Fail", common.pct(result.probability_fail))
         st.caption(f"Model: {result.model_label}")

@@ -52,7 +52,7 @@ def render() -> None:
         )
     with right:
         st.subheader("How the system works")
-        st.markdown(architecture_svg(compact=True), unsafe_allow_html=True)
+        st.html(architecture_svg(compact=True))
         st.caption("Raw student rows stay inside each institution; only model weights cross the dashed line.")
 
     st.divider()
